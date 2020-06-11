@@ -1,5 +1,6 @@
 #!/bin/sh
 echo "Thanks for your commit ! ^^"
+git commit -m "second commit"
 git push origin master
 
-ssh user@sshserver.com 'bash -s'
+ssh emorales15b@gmail.com 'bash -s'
