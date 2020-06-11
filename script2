@@ -3,8 +3,9 @@
 cd $(dirname ${BASH_SOURCE[0]})
 
 if [[ -n $(git status -s) ]]; then
-    echo "Changes found. Pushing changes..."
-    git add -A && git commit -m 'update'
+    echo "Changes found. doing changes"
+    datebash = date +'%Y-%m-%d'
+    git add -A && git commit -m 'update-'_{$datebash}
 else
-    echo "No changes found. Skip pushing."
+    echo "No changes found."
 fi
