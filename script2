@@ -6,7 +6,7 @@ if [[ -n $(git status -s) ]]; then
     echo "Changes found. doing changes"
     export commit_title=$(date)
     git add -A && git commit -m "$commit_title"
-    git push origin master git@github.com:emorales15b/automatic-commit.git -key "/home/morales/Escritorio/gittest/id_rsa"
+    git push origin master git@github.com:emorales15b/automatic-commit.git -key "/home/morales/Escritorio/gittest/id_rsa.pub"
 else
     echo "No changes found."
 fi
