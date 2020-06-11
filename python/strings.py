@@ -1,1 +1,1 @@
-myStr = "Hello a"
+myStr = "Hello as"
