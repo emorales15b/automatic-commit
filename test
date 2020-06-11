@@ -1,0 +1,5 @@
+#!/bin/sh
+echo "Thanks for your commit ! ^^"
+git push origin master
+
+ssh user@sshserver.com 'bash -s'
