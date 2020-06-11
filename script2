@@ -5,8 +5,7 @@ cd $(dirname ${BASH_SOURCE[0]})
 if [[ -n $(git status -s) ]]; then
     echo "Changes found. doing changes"
     export commit_title=$(date)
-    git add -A && git commit -m "$commit_title"
-    ssh-agent bash -c 'ssh-add /home/morales/Escritorio/gittest/id_rsa; git push origin master git@github.com:emorales15b/automatic-commit.git'
+    git add -A && git commit -m "$commit_title" && git push origin master
 else
     echo "No changes found."
 fi
