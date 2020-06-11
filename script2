@@ -4,8 +4,8 @@ cd $(dirname ${BASH_SOURCE[0]})
 
 if [[ -n $(git status -s) ]]; then
     echo "Changes found. doing changes"
-    yo = 'test'
-    git add -A && git commit -m echo $yo
+    export COMMIT_TITLE=$(date)
+    git add -A && git commit -m "$COMMIT_TITLE" 
 else
     echo "No changes found."
 fi
