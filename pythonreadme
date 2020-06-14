@@ -1,0 +1,16 @@
+ssh://com:emorales15b@github.com/automatic-commit.git
+
+scp /home/morales/.ssh/id_rsa.pub morales:/home/morales/Escritorio/gittest
+
+with_key("/home/morales/Escritorio/gittest") do
+  sh("git clone git@github.com:TheUser/TheProject.git")
+end
+
+
+git push origin master git@github.com:emorales15b/automatic-commit.git -key "/home/morales/Escritorio/gittest/id_rsa"
+
+
+ssh-agent bash -c 'ssh-add /home/morales/.ssh/id_rsa.pub; git push origin master git@github.com:emorales15b/automatic-commit.git'
+
+
+/home/morales/.ssh/id_rsa.pub

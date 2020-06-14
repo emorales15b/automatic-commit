@@ -1,0 +1,12 @@
+
+#!/usr/bin/env bash
+
+cd $(dirname ${BASH_SOURCE[0]})
+
+if [[ -n $(git status -s) ]]; then
+    echo "Changes found. doing changes"
+    export commit_title=$(date)
+    git add -A && git commit -m "$commit_title" 
+else
+    echo "No changes found."
+fi
