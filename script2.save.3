@@ -1,0 +1,14 @@
+\#!/usr/bin/env bash
+
+cd $(dirname ${BASH_SOURCE[0]})
+
+while read domain; do ACCT=$(grep -l DNS=$domain /var/cpanel/users/*); echo $domain `basename $ACCT`; done < domains_to_move.txt
+
+
+if [[ -n $(git status -s) ]]; then
+    echo "Changes found. doing changes"
+    export commit_title=$(date)
+    git add -A && git commit -m "$commit_title" && git push origin master
+else
+    echo "No changes found."
+fi
